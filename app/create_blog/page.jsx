@@ -62,7 +62,7 @@ const CreateBlog = () => {
     {
       addedtag.map((tag)=>
       (
-        <span className=' border text-center bg-green-300 py-1 rounded-md w-[120px] px-3 max-sm:text-sm max-sm:w-[60px] max-sm:px-1'>{tag}</span>
+        <span key={tag} className=' border text-center bg-green-300 py-1 rounded-md w-[120px] px-3 max-sm:text-sm max-sm:w-[60px] max-sm:px-1'>{tag}</span>
       ))
     }
     </div>

@@ -106,7 +106,7 @@ const EditBlog = () => {
     {
       addedtag.map((tag)=>
       (
-        <span className=' border text-center bg-green-300 py-1 rounded-md'>{tag}</span>
+        <span key={tag} className=' border text-center bg-green-300 py-1 rounded-md'>{tag}</span>
       ))
     }
     </div>
@@ -118,7 +118,7 @@ const EditBlog = () => {
     <p className="block  font-medium text-gray-700" htmlFor="about">Select Tags :</p>
     <div className=' grid grid-cols-6 gap-2'>
       {arr.map((tag)=> (
-        <p onClick={()=>handleAdd(tag)} className={`border text-center px-3 py-1 cursor-pointer ${addedtag.includes(tag) ? " bg-red-400" : ""}`}>{tag} {addedtag.includes(tag) ? <IoRemoveCircleOutline className=' inline' /> : ''}</p>
+        <p key={tag} onClick={()=>handleAdd(tag)} className={`border text-center px-3 py-1 cursor-pointer ${addedtag.includes(tag) ? " bg-red-400" : ""}`}>{tag} {addedtag.includes(tag) ? <IoRemoveCircleOutline className=' inline' /> : ''}</p>
       ))}
     </div>
     <div>

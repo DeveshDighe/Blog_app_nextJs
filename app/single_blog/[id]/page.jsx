@@ -46,7 +46,7 @@ let singleBlog;
           <p className=' text-center font-primary text-2xl my-2'>Tags : </p>
           <div className=' flex justify-center'>
             {singleBlog?.tags?.map((tag)=> (
-              <span className=' text-[15px] mx-2 text-center'>{tag}</span>
+              <span key={tag} className=' text-[15px] mx-2 text-center'>{tag}</span>
             ))}
             </div>
 
