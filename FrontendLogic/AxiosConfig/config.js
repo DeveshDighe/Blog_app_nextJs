@@ -3,8 +3,8 @@ import Cookies from "js-cookie";
 
 const Email = Cookies.get('MyEmail')
 
-// const BASEURL = 'http://localhost:3000/'
-const BASEURL = 'https://blog-app-next-js-omega.vercel.app/'
+const BASEURL = 'http://localhost:3000/'
+// const BASEURL = 'https://blog-app-next-js-omega.vercel.app/'
 
 
 export const api = axios.create({
