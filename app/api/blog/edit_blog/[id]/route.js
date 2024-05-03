@@ -22,7 +22,6 @@ export async function PUT(req, content){
    return NextResponse.json({msg : 'Blog Edited', success : true, EditedBlog }, {status :201})
 
   } catch (error) {
-    console.log(error);
     return NextResponse.json({msg : 'Blog Editing failed',error, success : false}, {status :400})
   }
 }

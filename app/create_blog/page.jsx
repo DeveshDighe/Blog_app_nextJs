@@ -16,7 +16,6 @@ const CreateBlog = () => {
 
   const handleAdd = (tag) => {
     const isInclude = addedtag.includes(tag)
-    console.log(isInclude ,'include hai kya bhai');
     if (isInclude) {
       const newTag = addedtag.filter((val)=> {
         return val !== tag
@@ -27,7 +26,6 @@ const CreateBlog = () => {
     }
     else{
       setaddedtag([...addedtag, tag])
-      console.log(addedtag , "This is added tag new");
     }
   }
 
@@ -42,11 +40,9 @@ const CreateBlog = () => {
           toast.success(res.data.msg)
           navigate.push('/')
         }
-        console.log(res, "This is response of create Blog");
       } catch (error) {
         
       }
-      console.log(value , 'This are values');
     }
   })
   return (

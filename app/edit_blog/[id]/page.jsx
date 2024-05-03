@@ -18,31 +18,27 @@ const EditBlog = () => {
   const [addedtag, setaddedtag] = useState([])
 
   const {id} = useParams()
-  console.log('This is id ', id);
 
   const getSingleBlogData = async () => {
     try {
       const response = await api.get(`api/blog/single_blog/${id}`)
-      console.log(response , "This is response single blog");
       if (response.data.success) {
         // console.log();
         setsingleBlog(response.data.singleBlog)
       }
     } catch (error) {
-      console.log(error , 'Ths is error');
     }
    }
   useEffect(() => {
     getSingleBlogData()
 
-    console.log(singleBlog, 'This is single blog');
   }, [])
   
 
 
   const handleAdd = (tag) => {
     const isInclude = addedtag.includes(tag)
-    console.log(isInclude ,'include hai kya bhai');
+
     if (isInclude) {
       const newTag = addedtag.filter((val)=> {
         return val !== tag
@@ -53,7 +49,7 @@ const EditBlog = () => {
     }
     else{
       setaddedtag([...addedtag, tag])
-      console.log(addedtag , "This is added tag new");
+
     }
   }
 
@@ -65,24 +61,20 @@ const EditBlog = () => {
     validationSchema : CreateBlogSchema,
     onSubmit :async (value , action)=>{
       value.tags = addedtag
-      console.log('sasaas', value);
       try {
         const res = await api.put(`api/blog/edit_blog/${id}`, value)
-        console.log(res, 'reresresr');
+
         if (res.data.success) {
           toast.success(res.data.msg)
           navigate.push('/')
         }
-        console.log(res, "This is response of edit Blog");
       } catch (error) {
         
       }
-      console.log(value , 'This are values');
     }
   })
 
   useEffect(() => {
-    console.log(singleBlog, 'single blog hook');
     if (singleBlog) {
       values.title = singleBlog.title,
       values.img = singleBlog.img,

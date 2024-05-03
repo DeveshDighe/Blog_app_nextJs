@@ -21,29 +21,27 @@ const MyBlogs = () => {
   const handleDelete =async (id) => {
     try {
       const response = await api.delete(`api/blog/delete_blog/${id}`)
-      console.log(response , 'delete response');
 
       if (response.data.success) {
         toast.success(response.data.msg)
         navigate.push('/')
       }
     } catch (error) {
-      console.log(error , 'Delete error');
-      console.log(error.response.data.msg);
+
     }
   }
 
   const fetcher = async (url) => {
     try {
-      console.log(url ,'urlll');
+
       const response = await api.get(url)
       if (response.data.success) {
-        console.log(response.data , 'This is res data');
+
         return response.data
       }
     } catch (error) {
       toast.error(error.response.data.error)
-      console.log(error , 'lallalalal');
+
     }
   }
 
@@ -58,7 +56,6 @@ const MyBlogs = () => {
   if (!data) {
     
       setTimeout(() => {
-        console.log('dddddd');
         setNothing(true)
       }, 3000)
     
@@ -71,8 +68,7 @@ const MyBlogs = () => {
   }
 
   if (data) {
-    // setmyBlogs(data.userBlogs)
-    console.log('laaaaaaa');
+
     return (
       <div className="grid gap-x-2 max-md:flex flex-col pb-48 mt-8 cursor-default">
         <div className="grid grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-y-6 col-span-4 max-sm:order-2">

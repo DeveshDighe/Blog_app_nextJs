@@ -17,7 +17,6 @@ export default function Blog() {
   const [search, setSearch] = useState('');
   const dispatchR = useDispatch();
   const searchRef = useRef('')
-  console.log('page jsx gg');
 
   const { blogs } = useSelector((state) => state.blogReducer);
 
@@ -25,11 +24,11 @@ export default function Blog() {
     e.preventDefault();
     const searchData = searchRef.current.value.trim().toLowerCase();
     setSearch(searchData);
-    console.log(searchData, 'This is setSearch Data');
+
   };
 
   const fetcher =async (url) => {
-    console.log('THTHTHTHTH');
+
   try {
     const response = await api.get(url);
     if (response?.data?.success) {
@@ -78,11 +77,9 @@ const { data, error, mutate } = useSWR(
     revalidateOnReconnect: true,
     revalidateOnMount: true
   },
-  console.log('It started')
 );
 
   
-  console.log('ddddd');
 
   const filteredBlogs = blogs?.filter((blog) => blog.title.toLowerCase().includes(search.toLowerCase())); 
 
@@ -99,7 +96,7 @@ const { data, error, mutate } = useSWR(
   }
 
 
-  console.log('ddddddggggggggggggg');
+
 
 
   if (data) {
@@ -147,7 +144,7 @@ const { data, error, mutate } = useSWR(
           }
           </div>
           <div className="max-sm:order-1 col-span-1 h-auto mt-2 border cursor-default bg-[#e2edff] max-md:bg-transparent rounded-lg  border-[#ffcb6b] lg-min-h-[1100px] max-sm:mb-4 max-md:border-none">
-            {/* <Filter /> */}
+            <Filter />
           </div>
         </div>
       </>

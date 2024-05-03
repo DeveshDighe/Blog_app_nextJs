@@ -23,7 +23,6 @@ export async function POST(req){
    return NextResponse.json({msg : 'Blog Created', success : true, CreatedBlog }, {status :201})
 
   } catch (error) {
-    console.log(error);
     return NextResponse.json({msg : 'Blog Creation failed',error, success : false}, {status :400})
   }
 }

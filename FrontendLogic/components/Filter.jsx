@@ -18,12 +18,12 @@ const Filter = () => {
       })
 
       setTags(removedTags)
-      console.log(removedTags , 'removed Tags');
+
     }
     else {
       setTags([...tags, tag])
     }
-    console.log(tags , 'this istaaa');
+
 
   }
 
@@ -36,17 +36,16 @@ const Filter = () => {
           dispatchR(addBlogs(response.data.allTagBlogs))
         }
       }
-      console.log(response, 'res tag');
+
     } catch (error) {
-      console.log(error , 'aaarrrr');
+
     }
   }
 
   useEffect(()=> {
-    // if (tags.length>0) {
-      console.log('kakakak');
+
       getBlogsWithTag(tags)
-    // }
+    
   }, [tags])
 
   let arr = ["Cricket" , "politics", 'AI', "Movies", "Anime", "Games", "Nature", "Food", "Animals", "Birds", "Peoples"]

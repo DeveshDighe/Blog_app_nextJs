@@ -12,15 +12,13 @@ const DeleteButton = ({id}) => {
   const handleDelete =async (id) => {
     try {
       const response = await api.delete(`api/blog/delete_blog/${id}`)
-      console.log(response , 'delete response');
 
       if (response.data.success) {
         toast.success(response.data.msg)
         navigate.push('/')
       }
     } catch (error) {
-      console.log(error , 'Delete error');
-      console.log(error.response.data.msg);
+
     }
   }
 

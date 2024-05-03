@@ -9,7 +9,6 @@ const NavBar = () => {
 
   const {state ,dispatch } = useContext(MyContext)
 
-  console.log('This is state', state);
   
   const handleAbout = () => {
     const element = document.getElementById('About Me')

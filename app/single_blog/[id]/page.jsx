@@ -21,13 +21,11 @@ let singleBlog;
  const getSingleBlogData = async () => {
   try {
     const response = await api.get(`api/blog/single_blog/${id}`)
-    console.log(response , "This is response single blog");
     if (response.data.success) {
       singleBlog = response.data.singleBlog
-      console.log(singleBlog ,'sssss');
     }
   } catch (error) {
-    console.log(error , 'Ths is error');
+    
   }
  }
 
