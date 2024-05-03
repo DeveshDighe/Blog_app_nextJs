@@ -32,7 +32,7 @@ const Filter = () => {
       const response = await api.post('api/blog/get_blog', tags )
       if (response.data.success) {
         const allBlogs = response.data.allTagBlogs
-        if (allBlogs.length>1) {
+        if (allBlogs.length>0) {
           dispatchR(addBlogs(response.data.allTagBlogs))
         }
       }
