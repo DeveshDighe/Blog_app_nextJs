@@ -1,6 +1,6 @@
 # Introduction to Our Blog Website
 
-Our blog website embodies the principles of simplicity, functionality, and user-friendliness. It's a platform designed to cater to both bloggers and readers, offering an array of features aimed at enhancing the overall experience. With an intuitive user interface and a robust backend architecture, our platform empowers users to create, discover, and interact with quality content effortlessly.
+My blog website embodies the principles of simplicity, functionality, and user-friendliness. It's a platform designed to cater to both bloggers and readers, offering an array of features aimed at enhancing the overall experience. With an intuitive user interface and a robust backend architecture, our platform empowers users to create, discover, and interact with quality content effortlessly.
 
 ## Key Features
 
